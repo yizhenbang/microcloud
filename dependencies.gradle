@@ -4,7 +4,10 @@ ext.versions = [ // 定义所有要使用的版本号
         alibabacloud:'2.2.1.RELEASE',       //SpringCloudAlibaba版本
         lombok:'1.18.18',                   //Lombok版本
         junit:'5.7.1',                      //Junit版本号
-        junitPlatformLauncher:'1.7.1'       //Junit测试工具运行平台版本号
+        junitPlatformLauncher:'1.7.1',      //Junit测试工具运行平台版本号
+        mybatisPlus:'3.4.3',                //MyBatis-Plus
+        mysql:'8.0.20',                     //MySQL
+        druidBootStarter:'1.2.8',           //SpringBootStarter
 ]
 
 ext.libraries = [
@@ -32,4 +35,10 @@ ext.libraries = [
                 "org.junit.platform:junit-platform-commons:${versions.junitPlatformLauncher}",
         // 以下的配置为Lombok组件有关的依赖
         'lombok': "org.projectlombok:lombok:${versions.lombok}",
+        // 以下是MyBatis-Plus
+        'mybatis-plus':"com.baomidou:mybatis-plus-boot-starter:${versions.mybatisPlus}",
+        // 以下是Druid
+        'druid-spring-boot-starter':"com.alibaba:druid-spring-boot-starter:${versions.druidBootStarter}",
+        // MySQL
+        'MySQL':"mysql:mysql-connector-java:${versions.mysql}",
 ]

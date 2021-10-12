@@ -98,3 +98,12 @@ project(':common-api'){
         compile('org.springframework.boot:spring-boot-starter-web')
     }
 }
+
+project(':provider-dept-8001'){
+    dependencies {
+        implementation(project(':common-api'))
+        compile(libraries.'mybatis-plus')
+        compile(libraries.'druid-spring-boot-starter')
+        compile(libraries.'MySQL')
+    }
+}

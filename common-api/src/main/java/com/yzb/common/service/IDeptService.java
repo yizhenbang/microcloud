@@ -5,9 +5,9 @@ import com.yzb.common.dto.DeptDTO;
 import java.util.List;
 
 public interface IDeptService {
-    void add(DeptDTO deptDTO);
+    boolean add(DeptDTO deptDTO);
 
-    DeptDTO get();
+    DeptDTO get(long id);
 
     List<DeptDTO> list();
 }

@@ -1,3 +1,4 @@
 rootProject.name = 'microcloud'
 include 'common-api'
+include 'provider-dept-8001'
 
