@@ -102,8 +102,14 @@ project(':common-api'){
 project(':provider-dept-8001'){
     dependencies {
         implementation(project(':common-api'))
-        compile(libraries.'mybatis-plus')
-        compile(libraries.'druid-spring-boot-starter')
-        compile(libraries.'MySQL')
+        implementation(libraries.'mybatis-plus')
+        implementation(libraries.'druid-spring-boot-starter')
+        implementation(libraries.'MySQL')
+    }
+}
+
+project(':consumer-dept-80'){
+    dependencies {
+        implementation(project(':common-api'))
     }
 }

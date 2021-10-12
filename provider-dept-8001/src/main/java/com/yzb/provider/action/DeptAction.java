@@ -18,7 +18,7 @@ import java.util.List;
  * @since JDK 1.8
  */
 @RestController
-@RequestMapping("/provider/dept")
+@RequestMapping("/provider/dept/*")
 public class DeptAction {
 
     @Autowired
@@ -35,12 +35,12 @@ public class DeptAction {
     }
 
     @GetMapping("list")
-    public List<DeptDTO> selectOne() {
+    public List<DeptDTO> list() {
         return this.iDeptService.list();
     }
 
     @PostMapping("add")
-    public boolean selectOne(DeptDTO deptDTO) {
+    public boolean add(@RequestBody DeptDTO deptDTO) {
         return this.iDeptService.add(deptDTO);
     }
 
