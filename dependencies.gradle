@@ -1,44 +1,47 @@
 ext.versions = [ // 定义所有要使用的版本号
-        springboot : '2.2.5.RELEASE',       // SpringBoot版本号
-        springcloud:'Hoxton.SR3',           //SpringCloud版本
-        alibabacloud:'2.2.1.RELEASE',       //SpringCloudAlibaba版本
-        lombok:'1.18.18',                   //Lombok版本
-        junit:'5.7.1',                      //Junit版本号
-        junitPlatformLauncher:'1.7.1',      //Junit测试工具运行平台版本号
-        mybatisPlus:'3.4.3',                //MyBatis-Plus
-        mysql:'8.0.20',                     //MySQL
-        druidBootStarter:'1.2.8',           //SpringBootStarter
+                 springboot           : '2.2.5.RELEASE',                // SpringBoot版本号
+                 springcloud          : 'Hoxton.SR3',                   //SpringCloud版本
+                 alibabacloud         : '2.2.1.RELEASE',                //SpringCloudAlibaba版本
+                 lombok               : '1.18.18',                      //Lombok版本
+                 junit                : '5.7.1',                        //Junit版本号
+                 junitPlatformLauncher: '1.7.1',                        //Junit测试工具运行平台版本号
+                 mybatisPlus          : '3.4.3',                        //MyBatis-Plus
+                 mysql                : '8.0.20',                       //MySQL
+                 druidBootStarter     : '1.2.8',                        //SpringBootStarter
+                 springfoxBootStarter : '3.0.0',                        //Swagger
 ]
 
 ext.libraries = [
-        'spring-boot-gradle-plugin':
+        'spring-boot-gradle-plugin'        :
                 "org.springframework.boot:spring-boot-gradle-plugin:${versions.springboot}",
-        'spring-cloud-dependencies':
+        'spring-cloud-dependencies'        :
                 "org.springframework.cloud:spring-cloud-dependencies:${versions.springcloud}",
         'spring-cloud-alibaba-dependencies':
                 "com.alibaba.cloud:spring-cloud-alibaba-dependencies:${versions.alibabacloud}",
         // 以下的配置为与项目用例测试有关的依赖
-        'junit-jupiter-api':
+        'junit-jupiter-api'                :
                 "org.junit.jupiter:junit-jupiter-api:${versions.junit}",
-        'junit-vintage-engine':
+        'junit-vintage-engine'             :
                 "org.junit.vintage:junit-vintage-engine:${versions.junit}",
-        'junit-jupiter-engine':
+        'junit-jupiter-engine'             :
                 "org.junit.jupiter:junit-jupiter-engine:${versions.junit}",
-        'junit-platform-launcher':
+        'junit-platform-launcher'          :
                 "org.junit.platform:junit-platform-launcher:${versions.junitPlatformLauncher}",
-        'junit-platform-engine':
+        'junit-platform-engine'            :
                 "org.junit.platform:junit-platform-engine:${versions.junitPlatformLauncher}",
-        'junit-jupiter-params':
+        'junit-jupiter-params'             :
                 "org.junit.jupiter:junit-jupiter-params:${versions.junit}",
-        'junit-bom': "org.junit:junit-bom:${versions.junit}",
-        'junit-platform-commons':
+        'junit-bom'                        : "org.junit:junit-bom:${versions.junit}",
+        'junit-platform-commons'           :
                 "org.junit.platform:junit-platform-commons:${versions.junitPlatformLauncher}",
         // 以下的配置为Lombok组件有关的依赖
-        'lombok': "org.projectlombok:lombok:${versions.lombok}",
+        'lombok'                           : "org.projectlombok:lombok:${versions.lombok}",
         // 以下是MyBatis-Plus
-        'mybatis-plus':"com.baomidou:mybatis-plus-boot-starter:${versions.mybatisPlus}",
+        'mybatis-plus'                     : "com.baomidou:mybatis-plus-boot-starter:${versions.mybatisPlus}",
         // 以下是Druid
-        'druid-spring-boot-starter':"com.alibaba:druid-spring-boot-starter:${versions.druidBootStarter}",
+        'druid-spring-boot-starter'        : "com.alibaba:druid-spring-boot-starter:${versions.druidBootStarter}",
         // MySQL
-        'MySQL':"mysql:mysql-connector-java:${versions.mysql}",
+        'MySQL'                            : "mysql:mysql-connector-java:${versions.mysql}",
+        // Swagger
+        'springfox-boot-starter'           : "io.springfox:springfox-boot-starter:${versions.springfoxBootStarter}",
 ]

@@ -2,9 +2,11 @@ package com.yzb.provider.action;
 
 import com.yzb.common.dto.DeptDTO;
 import com.yzb.common.service.IDeptService;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -31,11 +33,15 @@ public class DeptAction {
     private IDeptService iDeptService;
 
     @GetMapping("echo")
+    @ApiOperation(httpMethod = "get", notes = "这个接口直接给我返回一个echo数据", value = "ECHO程序")
     public String echo() {
         return "Hello";
     }
 
     @GetMapping("get/{id}")
+    @ApiImplicitParams({
+            @ApiImplicitParam(required = true,name = "id",value = "查询但个部门信息",dataType = "DeptDTO")
+    })
     public DeptDTO selectOne(@PathVariable("id") Long id) {
         printHeaders("get");
         return this.iDeptService.get(id);
@@ -48,6 +54,7 @@ public class DeptAction {
     }
 
     @PostMapping("add")
+
     public boolean add(@RequestBody DeptDTO deptDTO) {
         printHeaders("add");
         return this.iDeptService.add(deptDTO);

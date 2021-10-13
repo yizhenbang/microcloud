@@ -105,6 +105,7 @@ project(':provider-dept-8001'){
         implementation(libraries.'mybatis-plus')
         implementation(libraries.'druid-spring-boot-starter')
         implementation(libraries.'MySQL')
+        implementation(libraries.'springfox-boot-starter')
     }
 }
 
