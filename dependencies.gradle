@@ -1,14 +1,18 @@
 ext.versions = [ // 定义所有要使用的版本号
-                 springboot           : '2.2.5.RELEASE',                // SpringBoot版本号
-                 springcloud          : 'Hoxton.SR3',                   //SpringCloud版本
-                 alibabacloud         : '2.2.1.RELEASE',                //SpringCloudAlibaba版本
-                 lombok               : '1.18.18',                      //Lombok版本
-                 junit                : '5.7.1',                        //Junit版本号
-                 junitPlatformLauncher: '1.7.1',                        //Junit测试工具运行平台版本号
-                 mybatisPlus          : '3.4.3',                        //MyBatis-Plus
-                 mysql                : '8.0.20',                       //MySQL
-                 druidBootStarter     : '1.2.8',                        //SpringBootStarter
-                 springfoxBootStarter : '3.0.0',                        //Swagger
+                 springboot             : '2.2.5.RELEASE',                // SpringBoot版本号
+                 springcloud            : 'Hoxton.SR3',                   //SpringCloud版本
+                 alibabacloud           : '2.2.1.RELEASE',                //SpringCloudAlibaba版本
+                 lombok                 : '1.18.18',                      //Lombok版本
+                 junit                  : '5.7.1',                        //Junit版本号
+                 junitPlatformLauncher  : '1.7.1',                        //Junit测试工具运行平台版本号
+                 mybatisPlus            : '3.4.3',                        //MyBatis-Plus
+                 mysql                  : '8.0.20',                       //MySQL
+                 druidBootStarter       : '1.2.8',                        //SpringBootStarter
+                 springfoxBootStarter   : '3.0.0',                        //Swagger
+                 servlet                : '3.1.0',                        //Servlet-API
+                 commonscodec           : '1.15',                         //Common-code
+                 jjwt                   : '0.9.1',                        //JJWT
+                 jaxb                   : '2.3.0',                        //jxab
 ]
 
 ext.libraries = [
@@ -44,4 +48,11 @@ ext.libraries = [
         'MySQL'                            : "mysql:mysql-connector-java:${versions.mysql}",
         // Swagger
         'springfox-boot-starter'           : "io.springfox:springfox-boot-starter:${versions.springfoxBootStarter}",
+        // JWT的相关依赖
+        'servlet-api'                      : "javax.servlet:javax.servlet-api:${versions.servlet}",
+        'commons-codec'                    : "commons-codec:commons-codec:${versions.commonscodec}",
+        'jjwt'                             : "io.jsonwebtoken:jjwt:${versions.jjwt}",
+        'jaxb-api'                         : "javax.xml.bind:jaxb-api:${versions.jaxb}",
+        'jaxb-impl'                        : "com.sun.xml.bind:jaxb-impl:${versions.jaxb}",
+        'jaxb-core'                        : "com.sun.xml.bind:jaxb-core:${versions.jaxb}",
 ]

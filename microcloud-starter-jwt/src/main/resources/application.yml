@@ -1,0 +1,14 @@
+yzb:
+  security:
+    jwt:
+      expire: 1000 #单位：秒
+      issuer: ZhenBangYi
+      secret: per.yzb.com
+      sign: ZhenBangYi
+    password:
+      encrypt:
+        repeat: 5
+        salt: yizhenbang
+spring:
+  application:
+    name: microcloud-starter-jwt

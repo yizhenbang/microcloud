@@ -93,13 +93,13 @@ subprojects {   					// 配置子项目
     [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'// 编码配置
 }
 
-project(':common-api'){
+project('common-api'){
     dependencies {
         compile('org.springframework.boot:spring-boot-starter-web')
     }
 }
 
-project(':provider-dept-8001'){
+project('provider-dept-8001'){
     dependencies {
         implementation(project(':common-api'))
         implementation(libraries.'mybatis-plus')
@@ -109,8 +109,19 @@ project(':provider-dept-8001'){
     }
 }
 
-project(':consumer-dept-80'){
+project('consumer-dept-80'){
     dependencies {
         implementation(project(':common-api'))
+    }
+}
+project('microcloud-starter-jwt'){
+    dependencies {
+        annotationProcessor('org.springframework.boot:spring-boot-configuration-processor')
+        implementation(libraries.'servlet-api')
+        implementation(libraries.'commons-codec')
+        compile(libraries.'jjwt')
+        compile(libraries.'jaxb-api')
+        compile(libraries.'jaxb-impl')
+        compile(libraries.'jaxb-core')
     }
 }
