@@ -13,6 +13,7 @@ ext.versions = [ // 定义所有要使用的版本号
                  commonscodec           : '1.15',                         //Common-code
                  jjwt                   : '0.9.1',                        //JJWT
                  jaxb                   : '2.3.0',                        //jxab
+                 nacos                  : '2.0.2',                        //Nacos的配置版本
 ]
 
 ext.libraries = [
@@ -55,4 +56,5 @@ ext.libraries = [
         'jaxb-api'                         : "javax.xml.bind:jaxb-api:${versions.jaxb}",
         'jaxb-impl'                        : "com.sun.xml.bind:jaxb-impl:${versions.jaxb}",
         'jaxb-core'                        : "com.sun.xml.bind:jaxb-core:${versions.jaxb}",
+        'nacos-client'                     : "com.alibaba.nacos:nacos-client:${versions.nacos}",
 ]
