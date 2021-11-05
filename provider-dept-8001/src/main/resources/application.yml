@@ -48,6 +48,20 @@ spring:
             multi-statement-allow: true # 允许执行批量SQL
             delete-allow: false # 禁止执行删除语句
       aop-patterns: "com.yzb..service.*" # Spring监控
+  cloud:
+    nacos:
+      discovery:
+        cluster-name: ChangShaCloud
+        namespace: 92bdc18f-074b-47ab-9f40-983fcb4e1ae1
+        group: MICROCLOUD_GROUP
+        server-addr: nacos-server:8848
+        metadata:
+          author: 小易啊
+          age: 17
+          sex: 男
+        service: ${spring.application.name}
+  application:
+    name: provider-dept-8001
 mybatis-plus:
   #  config-location: classpath:META-INF/mybatis/mybatis-config.xml
   #  mapper-locations: classpath:META-INF/mybatis/mapper/**/*.xml # 所有的mapper映射文件
