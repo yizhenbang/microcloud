@@ -1,6 +1,8 @@
 server:
   port: 8001
 spring:
+  application:
+    name: provider-dept-8001
   datasource:
     username: root
     password: accp
@@ -55,13 +57,14 @@ spring:
         namespace: 92bdc18f-074b-47ab-9f40-983fcb4e1ae1
         group: MICROCLOUD_GROUP
         server-addr: nacos-server:8848
+        service: ${spring.application.name}
+        username: yzb
+        password: accp
         metadata:
           author: 小易啊
           age: 17
           sex: 男
-        service: ${spring.application.name}
-  application:
-    name: provider-dept-8001
+
 mybatis-plus:
   #  config-location: classpath:META-INF/mybatis/mybatis-config.xml
   #  mapper-locations: classpath:META-INF/mybatis/mapper/**/*.xml # 所有的mapper映射文件
