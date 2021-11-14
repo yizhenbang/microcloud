@@ -1,12 +1,12 @@
 server:
-  port: 8001
+  port: 8003
 spring:
   application:
     name: provider-dept
   datasource:
     username: root
     password: accp
-    url: jdbc:mysql://localhost:3306/xiaoyi8001?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    url: jdbc:mysql://localhost:3306/xiaoyi8003?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     druid: # druid相关配置
@@ -53,7 +53,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        cluster-name: MICROCLOUD_CLUSTER
+        cluster-name: XIAOYI_CLUSTER
         namespace: 92bdc18f-074b-47ab-9f40-983fcb4e1ae1
         group: MICROCLOUD_GROUP
         server-addr: nacos-server:8848

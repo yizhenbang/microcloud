@@ -5,6 +5,6 @@ spring:
         group: MICROCLOUD_GROUP
         server-addr: nacos-server:8848
         namespace: 92bdc18f-074b-47ab-9f40-983fcb4e1ae1
-        cluster-name: MICROCLOUD_CLUSTER
+        cluster-name: XIAOYI_CLUSTER
         username: yzb
         password: accp
