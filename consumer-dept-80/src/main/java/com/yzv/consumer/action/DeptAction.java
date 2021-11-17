@@ -15,32 +15,29 @@ import java.util.List;
 @RestController
 @RequestMapping("/consumer/dept/*")
 public class DeptAction {
-    private static final String DEPT_ADD_URL = "/provider/dept/add";
-    private static final String DEPT_LIST_URL = "/provider/dept/list";
-    private static final String DEPT_GET_URL = "/provider/dept/get/";
     private static final String SERVER_NAME = "provider-dept";
-    @Autowired
-    private RandomAccessUtil randomAccessUtil;
+    private static final String DEPT_ADD_URL = "http://"+SERVER_NAME+"/provider/dept/add";
+    private static final String DEPT_LIST_URL = "http://"+SERVER_NAME+"/provider/dept/list";
+    private static final String DEPT_GET_URL = "http://"+SERVER_NAME+"/provider/dept/get/";
+
+    // @Autowired
+    // private RandomAccessUtil randomAccessUtil;
 
     @Autowired
     private RestTemplate restTemplate;
 
     @GetMapping("add")
     public Object add(DeptDTO deptDTO) {
-        String targetUrl = randomAccessUtil.getTargetUrl(SERVER_NAME, DEPT_ADD_URL);
-        return this.restTemplate.postForObject(targetUrl, deptDTO, Boolean.class);
+        return this.restTemplate.postForObject(DEPT_ADD_URL, deptDTO, Boolean.class);
     }
 
     @GetMapping("list")
     public Object list() {
-        String targetUrl = randomAccessUtil.getTargetUrl(SERVER_NAME, DEPT_LIST_URL);
-        return this.restTemplate.getForObject(targetUrl, List.class);
+        return this.restTemplate.getForObject(DEPT_LIST_URL, List.class);
     }
 
     @GetMapping("get")
     public Object get(Long id) {
-        String targetUrl = randomAccessUtil.getTargetUrl(SERVER_NAME, DEPT_LIST_URL);
-        log.info("get:{}",targetUrl);
-        return this.restTemplate.getForObject(targetUrl + id, DeptDTO.class);
+        return this.restTemplate.getForObject(DEPT_GET_URL + id, DeptDTO.class);
     }
 }
