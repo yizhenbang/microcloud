@@ -1,2 +1,15 @@
 server:
   port: 80
+spring:
+  cloud:
+    nacos:
+      discovery:
+        cluster-name: MICROCLOUD_CLUSTER
+        namespace: 92bdc18f-074b-47ab-9f40-983fcb4e1ae1
+        group: MICROCLOUD_GROUP
+        server-addr: nacos-cluster-a:8848,nacos-cluster-b:8848
+        service: ${spring.application.name}
+        username: yzb
+        password: accp
+  application:
+    name: concumer

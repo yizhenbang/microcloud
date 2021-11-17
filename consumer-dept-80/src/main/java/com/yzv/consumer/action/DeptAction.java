@@ -1,6 +1,7 @@
 package com.yzv.consumer.action;
 
 import com.yzb.common.dto.DeptDTO;
+import com.yzv.consumer.util.RandomAccessUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,25 +15,32 @@ import java.util.List;
 @RestController
 @RequestMapping("/consumer/dept/*")
 public class DeptAction {
-    private static final String DEPT_ADD_URL = "http://provider-dept-8001:8001/provider/dept/add";
-    private static final String DEPT_LIST_URL = "http://provider-dept-8001:8001/provider/dept/list";
-    private static final String DEPT_GET_URL = "http://provider-dept-8001:8001/provider/dept/get/";
+    private static final String DEPT_ADD_URL = "/provider/dept/add";
+    private static final String DEPT_LIST_URL = "/provider/dept/list";
+    private static final String DEPT_GET_URL = "/provider/dept/get/";
+    private static final String SERVER_NAME = "provider-dept";
+    @Autowired
+    private RandomAccessUtil randomAccessUtil;
 
     @Autowired
     private RestTemplate restTemplate;
 
     @GetMapping("add")
     public Object add(DeptDTO deptDTO) {
-        return this.restTemplate.postForObject(DEPT_ADD_URL, deptDTO, Boolean.class);
+        String targetUrl = randomAccessUtil.getTargetUrl(SERVER_NAME, DEPT_ADD_URL);
+        return this.restTemplate.postForObject(targetUrl, deptDTO, Boolean.class);
     }
 
     @GetMapping("list")
     public Object list() {
-        return this.restTemplate.getForObject(DEPT_LIST_URL, List.class);
+        String targetUrl = randomAccessUtil.getTargetUrl(SERVER_NAME, DEPT_LIST_URL);
+        return this.restTemplate.getForObject(targetUrl, List.class);
     }
 
     @GetMapping("get")
     public Object get(Long id) {
-        return this.restTemplate.getForObject(DEPT_GET_URL + id, DeptDTO.class);
+        String targetUrl = randomAccessUtil.getTargetUrl(SERVER_NAME, DEPT_LIST_URL);
+        log.info("get:{}",targetUrl);
+        return this.restTemplate.getForObject(targetUrl + id, DeptDTO.class);
     }
 }

@@ -150,6 +150,10 @@ project(':provider-dept-8003'){
 project(':consumer-dept-80'){
     dependencies {
         implementation(project(':common-api'))
+        implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'){ // nacos发现服务
+            exclude group: 'com.alibaba.nacos' , module: 'nacos-client'
+        }
+        implementation(libraries.'nacos-client')
     }
 }
 project(':nacos-example'){

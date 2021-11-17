@@ -9,8 +9,7 @@ import lombok.Data;
 @TableName("dept")
 public class Dept {
     @TableId(type = IdType.AUTO)
-    private Long id;
-    private String deptNo;
-    private String deptName;
+    private String deptno;
+    private String dname;
     private String loc;
 }

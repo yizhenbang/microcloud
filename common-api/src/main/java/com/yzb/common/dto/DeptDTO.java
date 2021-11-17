@@ -6,8 +6,7 @@ import java.io.Serializable;
 
 @Data
 public class DeptDTO implements Serializable {
-    private Long id;
-    private String deptNo;
-    private String deptName;
+    private String deptno;
+    private String dname;
     private String loc;//所属数据库
 }
