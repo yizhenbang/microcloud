@@ -13,3 +13,7 @@ spring:
         password: accp
   application:
     name: concumer
+ribbon:
+  eager-load:
+    enabled: true
+    clients: provider-dept
