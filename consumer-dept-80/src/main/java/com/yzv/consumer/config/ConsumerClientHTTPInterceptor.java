@@ -25,7 +25,6 @@ public class ConsumerClientHTTPInterceptor implements ClientHttpRequestIntercept
     @Override
     public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException {
         request.getHeaders().set("token", "hello yzb");
-        log.info("哈哈哈哈");
         return execution.execute(request, body);
     }
 }
