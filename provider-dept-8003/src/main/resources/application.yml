@@ -64,6 +64,7 @@ spring:
           author: 小易啊
           age: 17
           sex: 男
+        weight: 40
 
 mybatis-plus:
   #  config-location: classpath:META-INF/mybatis/mybatis-config.xml

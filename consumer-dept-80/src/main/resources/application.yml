@@ -11,6 +11,7 @@ spring:
         service: ${spring.application.name}
         username: yzb
         password: accp
+        register-enabled: false
   application:
     name: concumer
 ribbon:

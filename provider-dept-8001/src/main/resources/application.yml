@@ -53,6 +53,7 @@ spring:
   cloud:
     nacos:
       discovery:
+        weight: 10
         cluster-name: MICROCLOUD_CLUSTER
         namespace: 92bdc18f-074b-47ab-9f40-983fcb4e1ae1
         group: MICROCLOUD_GROUP
@@ -64,6 +65,7 @@ spring:
           author: 小易啊
           age: 17
           sex: 男
+
 
 mybatis-plus:
   #  config-location: classpath:META-INF/mybatis/mybatis-config.xml
