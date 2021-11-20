@@ -12,6 +12,10 @@ spring:
         username: yzb
         password: accp
         register-enabled: false
+        metadata:
+          author: 易振邦
+          age: 17
+          sex: 男
   application:
     name: concumer
 ribbon:

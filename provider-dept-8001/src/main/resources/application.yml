@@ -62,7 +62,7 @@ spring:
         username: yzb
         password: accp
         metadata:
-          author: 小易啊
+          author: 易振邦
           age: 17
           sex: 男
 
