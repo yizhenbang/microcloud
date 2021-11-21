@@ -1,12 +1,11 @@
 package com.yzv.consumer.action;
 
 import com.yzb.common.dto.DeptDTO;
+import com.yzb.common.service.IDeptService;
 import com.yzv.consumer.util.RandomAccessUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
@@ -15,29 +14,22 @@ import java.util.List;
 @RestController
 @RequestMapping("/consumer/dept/*")
 public class DeptAction {
-    private static final String SERVER_NAME = "provider-dept";
-    private static final String DEPT_ADD_URL = "http://"+SERVER_NAME+"/provider/dept/add";
-    private static final String DEPT_LIST_URL = "http://"+SERVER_NAME+"/provider/dept/list";
-    private static final String DEPT_GET_URL = "http://"+SERVER_NAME+"/provider/dept/get/";
-
-    // @Autowired
-    // private RandomAccessUtil randomAccessUtil;
 
     @Autowired
-    private RestTemplate restTemplate;
+    private IDeptService deptService;
 
-    @GetMapping("add")
+    @PostMapping("add")
     public Object add(DeptDTO deptDTO) {
-        return this.restTemplate.postForObject(DEPT_ADD_URL, deptDTO, Boolean.class);
+        return this.deptService.add(deptDTO);
     }
 
     @GetMapping("list")
     public Object list() {
-        return this.restTemplate.getForObject(DEPT_LIST_URL, List.class);
+        return this.deptService.list();
     }
 
     @GetMapping("get")
     public Object get(Long id) {
-        return this.restTemplate.getForObject(DEPT_GET_URL + id, DeptDTO.class);
+        return this.deptService.get(id);
     }
 }

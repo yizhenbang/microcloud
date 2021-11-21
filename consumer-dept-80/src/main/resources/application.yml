@@ -22,3 +22,6 @@ ribbon:
   eager-load:
     enabled: true
     clients: provider-dept
+logging:
+  level:
+    com.yzb.common.service.IDeptService: debug

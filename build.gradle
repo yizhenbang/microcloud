@@ -96,6 +96,7 @@ subprojects {   					// 配置子项目
 project(':common-api'){
     dependencies {
         compile('org.springframework.boot:spring-boot-starter-web')
+        compile('org.springframework.cloud:spring-cloud-starter-openfeign')
     }
 }
 
