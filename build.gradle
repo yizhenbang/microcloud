@@ -155,6 +155,8 @@ project(':consumer-dept-80'){
             exclude group: 'com.alibaba.nacos' , module: 'nacos-client'
         }
         implementation(libraries.'nacos-client')
+        implementation(libraries.'httpclient')
+        implementation(libraries.'feign-httpclient')
     }
 }
 project(':nacos-example'){

@@ -14,6 +14,8 @@ ext.versions = [ // 定义所有要使用的版本号
                  jjwt                   : '0.9.1',                        //JJWT
                  jaxb                   : '2.3.0',                        //jxab
                  nacos                  : '2.0.2',                        //Nacos的配置版本
+                 httpclient             : '4.5.13',
+                 feignHttpclient        : '11.7'
 ]
 
 ext.libraries = [
@@ -57,4 +59,7 @@ ext.libraries = [
         'jaxb-impl'                        : "com.sun.xml.bind:jaxb-impl:${versions.jaxb}",
         'jaxb-core'                        : "com.sun.xml.bind:jaxb-core:${versions.jaxb}",
         'nacos-client'                     : "com.alibaba.nacos:nacos-client:${versions.nacos}",
+        // 以下是HttpClient的配置
+        'httpclient'                       : "org.apache.httpcomponents:httpclient:${versions.httpclient}",
+        'feign-httpclient'                 : "io.github.openfeign:feign-httpclient:${versions.feignHttpclient}"
 ]
