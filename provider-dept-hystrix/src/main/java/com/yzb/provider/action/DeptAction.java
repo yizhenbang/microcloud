@@ -37,21 +37,21 @@ public class DeptAction {
     }
 
     @GetMapping("get/{id}")
-    @HystrixCommand(fallbackMethod = "getRollBack")
+    // @HystrixCommand(fallbackMethod = "getRollBack")
     public DeptDTO selectOne(@PathVariable("id") Long id) {
         printHeaders("get");
         return this.iDeptService.get(id);
     }
 
 
-    public DeptDTO getRollBack(Long id) {
-        DeptDTO deptDTO = new DeptDTO();
-        deptDTO.setLoc("【数据回退】Loc");
-        deptDTO.setDname("【数据回退】Dname");
-        deptDTO.setDeptno("【数据回退】Deptno");
-        deptDTO.setId(id);
-        return deptDTO;
-    }
+    // public DeptDTO getRollBack(Long id) {
+    //     DeptDTO deptDTO = new DeptDTO();
+    //     deptDTO.setLoc("【数据回退】Loc");
+    //     deptDTO.setDname("【数据回退】Dname");
+    //     deptDTO.setDeptno("【数据回退】Deptno");
+    //     deptDTO.setId(id);
+    //     return deptDTO;
+    // }
 
     @GetMapping("list")
     public List<DeptDTO> list() {

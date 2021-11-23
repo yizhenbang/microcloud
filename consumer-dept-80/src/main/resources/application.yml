@@ -42,3 +42,5 @@ feign:
       min-request-size: 512
     response:
       enabled: true
+  hystrix:
+    enabled: true # 开启hystrix
