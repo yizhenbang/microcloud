@@ -148,6 +148,23 @@ project(':provider-dept-8003'){
         implementation(libraries.'nacos-client')
     }
 }
+project(':provider-dept-hystrix'){
+    dependencies {
+        implementation(project(':common-api'))
+        implementation(libraries.'mybatis-plus')
+        implementation(libraries.'druid-spring-boot-starter')
+        implementation(libraries.'MySQL')
+//        implementation(libraries.'springfox-boot-starter')
+        implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'){ // nacos发现服务
+            exclude group: 'com.alibaba.nacos' , module: 'nacos-client'
+        }
+        implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config'){ //nacos配置
+            exclude group: 'com.alibaba.nacos' , module: 'nacos-client'
+        }
+        implementation(libraries.'nacos-client')
+        implementation('org.springframework.cloud:spring-cloud-starter-netflix-hystrix')
+    }
+}
 project(':consumer-dept-80'){
     dependencies {
         implementation(project(':common-api'))
