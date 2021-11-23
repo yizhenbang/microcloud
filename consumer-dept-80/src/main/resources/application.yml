@@ -1,5 +1,9 @@
 server:
   port: 80
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain
+    min-response-size: 512 # 当超过512kb采用压缩
 spring:
   cloud:
     nacos:
@@ -31,3 +35,10 @@ feign:
     max-connections: 200 # 最大的连接个数
     max-connections-per-route: 50 # 单个路径的访问个数
     connection-timeout: 2000 # 超时时间
+  compression:
+    request:
+      enabled: true
+      mime-types: application/json,application/xml,text/html,text/xml,text/plain
+      min-request-size: 512
+    response:
+      enabled: true
