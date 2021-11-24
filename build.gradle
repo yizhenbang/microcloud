@@ -202,3 +202,15 @@ project(':hystrix-hashboard-9899'){
         implementation('org.springframework.cloud:spring-cloud-starter-netflix-hystrix-dashboard')
     }
 }
+project(':turbine-8100'){
+    dependencies {
+        implementation('org.springframework.boot:spring-boot-starter-web')
+        implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'){ // nacos发现服务
+            exclude group: 'com.alibaba.nacos' , module: 'nacos-client'
+        }
+        implementation(libraries.'nacos-client')
+        implementation('org.springframework.cloud:spring-cloud-starter-netflix-turbine'){
+            exclude group: 'org.springframework.cloud',module: 'spring-cloud-starter-netflix-eureka-client'
+        }
+    }
+}
