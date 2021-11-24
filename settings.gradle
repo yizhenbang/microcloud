@@ -7,4 +7,5 @@ include 'provider-dept-hystrix'
 include 'consumer-dept-80'
 include 'microcloud-starter-jwt'
 include 'nacos-example'
+include 'hystrix-hashboard-9899'
 

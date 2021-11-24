@@ -38,6 +38,7 @@ public class DeptAction {
 
     @GetMapping("get/{id}")
     // @HystrixCommand(fallbackMethod = "getRollBack")
+    @HystrixCommand
     public DeptDTO selectOne(@PathVariable("id") Long id) {
         printHeaders("get");
         return this.iDeptService.get(id);
@@ -54,6 +55,7 @@ public class DeptAction {
     // }
 
     @GetMapping("list")
+    @HystrixCommand
     public List<DeptDTO> list() {
         printHeaders("list");
         return this.iDeptService.list();
