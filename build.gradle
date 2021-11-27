@@ -106,7 +106,7 @@ project(':provider-dept-8001'){
         implementation(libraries.'mybatis-plus')
         implementation(libraries.'druid-spring-boot-starter')
         implementation(libraries.'MySQL')
-//        implementation(libraries.'springfox-boot-starter')
+        implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel')
         implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'){ // nacos发现服务
             exclude group: 'com.alibaba.nacos' , module: 'nacos-client'
         }
@@ -148,24 +148,6 @@ project(':provider-dept-8003'){
         implementation(libraries.'nacos-client')
     }
 }
-project(':provider-dept-hystrix'){
-    dependencies {
-        implementation(project(':common-api'))
-        implementation(libraries.'mybatis-plus')
-        implementation(libraries.'druid-spring-boot-starter')
-        implementation(libraries.'MySQL')
-//        implementation(libraries.'springfox-boot-starter')
-        implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'){ // nacos发现服务
-            exclude group: 'com.alibaba.nacos' , module: 'nacos-client'
-        }
-        implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-config'){ //nacos配置
-            exclude group: 'com.alibaba.nacos' , module: 'nacos-client'
-        }
-        implementation(libraries.'nacos-client')
-        implementation('org.springframework.boot:spring-boot-starter-actuator')
-        implementation('org.springframework.cloud:spring-cloud-starter-netflix-hystrix')
-    }
-}
 project(':consumer-dept-80'){
     dependencies {
         implementation(project(':common-api'))
@@ -177,12 +159,6 @@ project(':consumer-dept-80'){
         implementation(libraries.'feign-httpclient')
     }
 }
-project(':nacos-example'){
-    dependencies {
-        implementation(project(':common-api'))
-        implementation(libraries.'nacos-client')
-    }
-}
 project(':microcloud-starter-jwt'){
     dependencies {
         annotationProcessor('org.springframework.boot:spring-boot-configuration-processor')
@@ -192,25 +168,5 @@ project(':microcloud-starter-jwt'){
         compile(libraries.'jaxb-api')
         compile(libraries.'jaxb-impl')
         compile(libraries.'jaxb-core')
-    }
-}
-project(':hystrix-hashboard-9899'){
-    dependencies {
-        implementation('org.springframework.boot:spring-boot-starter-actuator')
-        implementation('org.springframework.cloud:spring-cloud-starter-netflix-hystrix')
-        implementation('org.springframework.boot:spring-boot-starter-web')
-        implementation('org.springframework.cloud:spring-cloud-starter-netflix-hystrix-dashboard')
-    }
-}
-project(':turbine-8100'){
-    dependencies {
-        implementation('org.springframework.boot:spring-boot-starter-web')
-        implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'){ // nacos发现服务
-            exclude group: 'com.alibaba.nacos' , module: 'nacos-client'
-        }
-        implementation(libraries.'nacos-client')
-        implementation('org.springframework.cloud:spring-cloud-starter-netflix-turbine'){
-            exclude group: 'org.springframework.cloud',module: 'spring-cloud-starter-netflix-eureka-client'
-        }
     }
 }
