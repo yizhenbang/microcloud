@@ -1,5 +1,6 @@
 package com.yzb.provider.action;
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.yzb.common.dto.DeptDTO;
 import com.yzb.common.service.IDeptService;
 import lombok.extern.slf4j.Slf4j;
@@ -35,13 +36,22 @@ public class DeptAction {
         return "Hello";
     }
 
-    @GetMapping("get/{id}")
     // @ApiImplicitParams({
     //         @ApiImplicitParam(required = true,name = "id",value = "查询但个部门信息",dataType = "DeptDTO")
     // })
+    @GetMapping("get/{id}")
+    @SentinelResource(value = "/get",fallback = "getFallback")
     public DeptDTO selectOne(@PathVariable("id") Long id) {
         printHeaders("get");
         return this.iDeptService.get(id);
+    }
+
+    public DeptDTO getFallback(@PathVariable("id") Long id){
+        DeptDTO deptDTO = new DeptDTO();
+        deptDTO.setDeptno("【Fallback】Deptno");
+        deptDTO.setDname("【Fallback】name");
+        deptDTO.setLoc("【Fallback】Loc");
+        return deptDTO;
     }
 
     @GetMapping("list")
