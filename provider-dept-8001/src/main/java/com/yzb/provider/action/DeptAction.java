@@ -3,6 +3,7 @@ package com.yzb.provider.action;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import com.yzb.common.dto.DeptDTO;
 import com.yzb.common.service.IDeptService;
+import com.yzb.provider.action.block.DeptBlockHandler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -40,7 +41,7 @@ public class DeptAction {
     //         @ApiImplicitParam(required = true,name = "id",value = "查询但个部门信息",dataType = "DeptDTO")
     // })
     @GetMapping("get/{id}")
-    @SentinelResource(value = "/get",fallback = "getFallback")
+    @SentinelResource(value = "/get",fallback = "getFallback",blockHandlerClass = DeptBlockHandler.class,blockHandler = "getBlock")
     public DeptDTO selectOne(@PathVariable("id") Long id) {
         printHeaders("get");
         return this.iDeptService.get(id);
@@ -55,6 +56,7 @@ public class DeptAction {
     }
 
     @GetMapping("list")
+    @SentinelResource(value = "/list",blockHandlerClass = DeptBlockHandler.class,blockHandler = "blockList")
     public List<DeptDTO> list() {
         printHeaders("list");
         return this.iDeptService.list();
