@@ -41,7 +41,7 @@ public class DeptAction {
     //         @ApiImplicitParam(required = true,name = "id",value = "查询但个部门信息",dataType = "DeptDTO")
     // })
     @GetMapping("get/{id}")
-    @SentinelResource(value = "/get",fallback = "getFallback",blockHandlerClass = DeptBlockHandler.class,blockHandler = "getBlock")
+    // @SentinelResource(value = "/get",blockHandlerClass = DeptBlockHandler.class,blockHandler = "getBlock")
     public DeptDTO selectOne(@PathVariable("id") Long id) {
         printHeaders("get");
         return this.iDeptService.get(id);
