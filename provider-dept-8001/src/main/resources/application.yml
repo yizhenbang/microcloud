@@ -71,7 +71,6 @@ spring:
         dashboard: sentinel-server:8888 # Sentinel 的控制台路径
       block-page: /errors/block
 
-
 mybatis-plus:
   #  config-location: classpath:META-INF/mybatis/mybatis-config.xml
   #  mapper-locations: classpath:META-INF/mybatis/mapper/**/*.xml # 所有的mapper映射文件

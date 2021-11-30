@@ -122,6 +122,7 @@ project(':provider-dept-8002'){
         implementation(libraries.'mybatis-plus')
         implementation(libraries.'druid-spring-boot-starter')
         implementation(libraries.'MySQL')
+        implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel')
 //        implementation(libraries.'springfox-boot-starter')
         implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'){ // nacos发现服务
             exclude group: 'com.alibaba.nacos' , module: 'nacos-client'
@@ -138,6 +139,7 @@ project(':provider-dept-8003'){
         implementation(libraries.'mybatis-plus')
         implementation(libraries.'druid-spring-boot-starter')
         implementation(libraries.'MySQL')
+        implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel')
 //        implementation(libraries.'springfox-boot-starter')
         implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'){ // nacos发现服务
             exclude group: 'com.alibaba.nacos' , module: 'nacos-client'
@@ -159,6 +161,15 @@ project(':consumer-dept-80'){
         implementation(libraries.'feign-httpclient')
     }
 }
+project(':Sentinel-Token-Server'){
+    dependencies {
+        implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel'){
+            exclude group: 'com.alibaba.csp',module: 'sentinel-cluster-client-default'
+        }
+        implementation('org.springframework.boot:spring-boot-starter-web')
+    }
+}
+
 project(':microcloud-starter-jwt'){
     dependencies {
         annotationProcessor('org.springframework.boot:spring-boot-configuration-processor')

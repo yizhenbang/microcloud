@@ -65,7 +65,10 @@ spring:
           author: 小易啊
           age: 17
           sex: 男
-
+    sentinel:
+      transport:
+        port: 8719 # 默认就是8719 微服务与Sentinel的一个整合端口
+        dashboard: sentinel-server:8888 # Sentinel 的控制台路径
 
 mybatis-plus:
   #  config-location: classpath:META-INF/mybatis/mybatis-config.xml

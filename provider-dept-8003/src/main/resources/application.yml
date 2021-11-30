@@ -65,7 +65,10 @@ spring:
           age: 17
           sex: 男
         weight: 40
-
+    sentinel:
+      transport:
+        dashboard: sentinel-server:8888
+        port: 8719
 mybatis-plus:
   #  config-location: classpath:META-INF/mybatis/mybatis-config.xml
   #  mapper-locations: classpath:META-INF/mybatis/mapper/**/*.xml # 所有的mapper映射文件
