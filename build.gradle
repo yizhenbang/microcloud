@@ -106,6 +106,7 @@ project(':provider-dept-8001'){
         implementation(libraries.'mybatis-plus')
         implementation(libraries.'druid-spring-boot-starter')
         implementation(libraries.'MySQL')
+        implementation(libraries.'sentinel-datasource-nacos')
         implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel')
         implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'){ // nacos发现服务
             exclude group: 'com.alibaba.nacos' , module: 'nacos-client'

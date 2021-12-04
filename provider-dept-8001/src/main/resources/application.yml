@@ -59,8 +59,8 @@ spring:
         group: MICROCLOUD_GROUP
         server-addr: nacos-server:8848
         service: ${spring.application.name}
-        username: yzb
-        password: accp
+#        username: yzb
+#        password: accp
         metadata:
           author: 易振邦
           age: 17
@@ -70,6 +70,17 @@ spring:
         port: 8719 # 默认就是8719 微服务与Sentinel的一个整合端口
         dashboard: sentinel-server:8888 # Sentinel 的控制台路径
       block-page: /errors/block
+      datasource:
+        flow-datasource:
+          nacos:
+            namespace: 92bdc18f-074b-47ab-9f40-983fcb4e1ae1
+            group-id: Sentinel_GROUP
+            server-addr: nacos-server:8848
+            data-id: ${spring.application.name}-flow-rules # 数据ID
+            data-type: json # 配置文件结构
+            rule_type: flow # 流控类型
+      eager: true
+
 
 mybatis-plus:
   #  config-location: classpath:META-INF/mybatis/mybatis-config.xml
