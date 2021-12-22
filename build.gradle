@@ -182,3 +182,13 @@ project(':microcloud-starter-jwt'){
         compile(libraries.'jaxb-core')
     }
 }
+
+project(':microGateway-9501'){
+    dependencies {
+        implementation('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery'){ // nacos发现服务
+            exclude group: 'com.alibaba.nacos' , module: 'nacos-client'
+        }
+        implementation(libraries.'nacos-client')
+        implementation('org.springframework.cloud:spring-cloud-starter-gateway')
+    }
+}

@@ -1,0 +1,17 @@
+server:
+  port: 9501
+spring:
+  application:
+    name: microcloud.gateway
+  cloud:
+    gateway: # 网关
+      discovery: # 发现
+        locator: # 位置
+          enabled: true
+    nacos:
+      discovery:
+        cluster-name: MICROCLOUD_CLUSTER
+        namespace: 92bdc18f-074b-47ab-9f40-983fcb4e1ae1
+        group: MICROCLOUD_GROUP
+        server-addr: nacos-server:8848
+        service: ${spring.application.name}

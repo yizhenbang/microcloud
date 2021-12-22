@@ -6,4 +6,5 @@ include 'provider-dept-8003'
 include 'consumer-dept-80'
 include 'microcloud-starter-jwt'
 include 'Sentinel-Token-Server'
+include 'microGateway-9501'
 

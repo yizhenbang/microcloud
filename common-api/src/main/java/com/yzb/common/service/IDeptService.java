@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
-@FeignClient(value = "provider-dept",configuration = FeignConfig.class,fallbackFactory = FeignHystrixFallbackFactory.class)
+@FeignClient(value = "microcloud.gateway",configuration = FeignConfig.class,fallbackFactory = FeignHystrixFallbackFactory.class)
 public interface IDeptService {
-    @PostMapping("/provider/dept/add")
+    @PostMapping("/provider-dept/provider/dept/add")
     boolean add(DeptDTO deptDTO);
 
-    @GetMapping("/provider/dept/get/{deptno}")
+    @GetMapping("/provider-dept/provider/dept/get/{deptno}")
     DeptDTO get(@PathVariable("deptno") long id);
 
-    @GetMapping("/provider/dept/list")
+    @GetMapping("/provider-dept/provider/dept/list")
     List<DeptDTO> list();
 }
