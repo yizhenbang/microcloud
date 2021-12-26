@@ -13,6 +13,8 @@ spring:
           uri: lb://provider-dept # 匹配的路径
           predicates:
             - Path=/** #匹配全部的子路径
+            - Before=2088-01-18T23:59:59+08:00[Asia/Shanghai]
+
 
     nacos:
       discovery:
