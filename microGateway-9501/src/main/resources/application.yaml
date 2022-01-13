@@ -15,7 +15,7 @@ spring:
             - Path=/** #匹配全部的子路径
           filters:
             - AddRequestHeader=yzhenb1228,你好-gateway
-
+            - Log=hello,yzhenb
 
     nacos:
       discovery:
