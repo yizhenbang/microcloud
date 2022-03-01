@@ -13,6 +13,7 @@ spring:
           uri: lb://provider-dept # 匹配的路径
           predicates:
             - Path=/** #匹配全部的子路径
+            - DefaultTimeSubsection=22:41,22:45
           filters:
             - AddRequestHeader=yzhenb1228,你好-gateway
             - Log=hello,yzhenb

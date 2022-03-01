@@ -16,16 +16,16 @@ import java.util.List;
 public class TestCopy {
     @Test
     public void copy() {
-        List<DeptDTO> list = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            DeptDTO deptDTO = new DeptDTO();
-            deptDTO.setId(10L);
-            deptDTO.setDeptNo("001");
-            deptDTO.setDeptName("开发");
-            deptDTO.setLoc("loc");
-            list.add(deptDTO);
-        }
-        List<DeptDTO> deptDTOS = DeepBeanUtils.copyListProperties(list, DeptDTO::new);
-        deptDTOS.forEach(System.out::println);
+        // List<DeptDTO> list = new ArrayList<>();
+        // for (int i = 0; i < 10; i++) {
+        //     DeptDTO deptDTO = new DeptDTO();
+        //     deptDTO.setId(10L);
+        //     deptDTO.setDeptNo("001");
+        //     deptDTO.setDeptName("开发");
+        //     deptDTO.setLoc("loc");
+        //     list.add(deptDTO);
+        // }
+        // List<DeptDTO> deptDTOS = DeepBeanUtils.copyListProperties(list, DeptDTO::new);
+        // deptDTOS.forEach(System.out::println);
     }
 }

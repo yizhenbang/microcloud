@@ -1,5 +1,6 @@
-package com.yzb.gateway.config;
+package com.yzb.gateway.factory;
 
+import com.yzb.gateway.config.TimeSubsectionConfig;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.handler.predicate.AbstractRoutePredicateFactory;
 import org.springframework.stereotype.Component;
@@ -36,17 +37,17 @@ public class DefaultTimeSubsectionRoutePredicateFactory extends AbstractRoutePre
     @Override
     public Predicate<ServerWebExchange> apply(TimeSubsectionConfig config) {
         String now = LocalDateTime.now().format(dateTimeFormatter);
-        Set<String> section = new TimeSubsectionConfig().getSection();
+        Set<String> section = new TimeSubsectionConfig().getSection1();
 
-        log.info("当前的时间为：{}，判断结果为：{}", now, section.contains(now));
+        log.info("当前的时间为：{}，判断结果为：{}，所有的时间列表有：{}，【config】：{}", now, section.contains(now),section,config.getSection1());
         return serverWebExchange -> {
-            return config.getSection().contains(now);
+            return config.getSection1().contains(now);
         };
     }
 
     @Override
     public List<String> shortcutFieldOrder() {// 配置项
-        log.info("shortcutFieldOrder()");
+        log.info("shortcutFieldOrder()：{}",Collections.singletonList("section"));
         return Collections.singletonList("section");
     }
 

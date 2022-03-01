@@ -14,13 +14,13 @@ import java.util.Set;
  * @since JDK 1.8
  */
 public class TimeSubsectionConfig {
-    private Set<String> section = new LinkedHashSet<>();
+    private Set<String> section1 = new LinkedHashSet<>();
 
-    public Set<String> getSection() {
-        return section;
+    public Set<String> getSection1() {
+        return section1;
     }
 
-    public void setSection(List<String> section) {
-        this.section.addAll(section);
+    public void setSection(List<String> section1) {
+        this.section1.addAll(section1);
     }
 }
