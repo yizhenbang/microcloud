@@ -7,6 +7,8 @@ import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 
+import java.util.Map;
+
 /**
  * ClassName: LogGatewayFilter
  * Description: 做日志过滤工程
@@ -23,6 +25,8 @@ public class LogGatewayFilterFactory extends AbstractNameValueGatewayFilterFacto
     @Override
     public GatewayFilter apply(NameValueConfig config) {
         return ((exchange, chain) -> {
+            Map<String, Object> attributes = exchange.getAttributes();
+            log.info("【获取所有的Attr】:{}",attributes);
             log.info("【NAME:{}，VALUE:{}】", config.getName(), config.getValue());
             ServerHttpRequest request = exchange.getRequest().mutate().build();
             log.info("【请求方法：{}】，【请求路径：{}】", request.getMethod(), request.getPath());
