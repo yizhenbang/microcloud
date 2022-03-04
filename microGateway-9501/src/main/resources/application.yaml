@@ -24,3 +24,10 @@ spring:
         group: MICROCLOUD_GROUP
         server-addr: nacos-server:8848
         service: ${spring.application.name}
+management:
+  server:
+    port: 9090
+  endpoints:
+    web:
+      exposure:
+        include: "*"
