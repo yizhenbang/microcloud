@@ -20,12 +20,12 @@ import reactor.core.publisher.Mono;
 @Slf4j
 public class GlobalFilters {
     @Bean("firstGlobalFilter")
-    @Order(500)
+    @Order(-10)
     public GlobalFilter firstGlobalFilter(){
         return ((exchange, chain) -> {
-            log.info("（pre）");
+            log.info("【2】（pre）");
             return Mono.fromRunnable(()->{
-                log.info("（POST）");
+                log.info("【2】（POST）");
             });
         });
     }

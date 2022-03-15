@@ -17,16 +17,16 @@ import reactor.core.publisher.Mono;
  * @version 1.0
  * @since JDK 1.8
  */
-@Order(-500)
+@Order(-20)
 @Component
 @Slf4j
 public class DefaultGlobalFilter implements GlobalFilter {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-        log.info("（PRE）【路径】：{}，请求方式：{}",exchange.getRequest().getPath(),exchange.getRequest().getMethod());
+        log.info("（PRE）【1】【路径】：{}，请求方式：{}",exchange.getRequest().getPath(),exchange.getRequest().getMethod());
         return chain.filter(exchange).then(
                 Mono.fromRunnable(()->{
-                    log.info("（POST）【状态码】：{}，",exchange.getResponse().getStatusCode());
+                    log.info("（POST）【1】【状态码】：{}，",exchange.getResponse().getStatusCode());
                 })
         );
     }
