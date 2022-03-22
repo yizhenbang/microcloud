@@ -17,7 +17,7 @@ import reactor.core.publisher.Mono;
  * @version 1.0
  * @since JDK 1.8
  */
-@Order(-20)
+//@Order(-20)
 @Component
 @Slf4j
 public class DefaultGlobalFilter implements GlobalFilter {

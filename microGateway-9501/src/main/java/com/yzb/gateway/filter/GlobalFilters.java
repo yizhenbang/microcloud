@@ -16,7 +16,7 @@ import reactor.core.publisher.Mono;
  * @version 1.0
  * @since JDK 1.8
  */
-@Component
+//@Component
 @Slf4j
 public class GlobalFilters {
     @Bean("firstGlobalFilter")
