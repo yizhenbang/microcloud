@@ -16,7 +16,8 @@ ext.versions = [ // 定义所有要使用的版本号
                  nacos                  : '2.0.2',                        //Nacos的配置版本
                  httpclient             : '4.5.13',
                  feignHttpclient        : '11.7',
-                 SentinelNacosDatasource: '1.8.2'                           // Sentinel-Nacos-Datasource
+                 SentinelNacosDatasource: '1.8.2',                           // Sentinel-Nacos-Datasource
+                 Caffeine               : '2.9.3'                               // Caffeine
 ]
 
 ext.libraries = [
@@ -64,5 +65,8 @@ ext.libraries = [
         'httpclient'                       : "org.apache.httpcomponents:httpclient:${versions.httpclient}",
         'feign-httpclient'                 : "io.github.openfeign:feign-httpclient:${versions.feignHttpclient}",
         // 以下为 Sentinel 的相关配置项
-        'sentinel-datasource-nacos'        : "com.alibaba.csp:sentinel-datasource-nacos:${versions.SentinelNacosDatasource}"
+        'sentinel-datasource-nacos'        : "com.alibaba.csp:sentinel-datasource-nacos:${versions.SentinelNacosDatasource}",
+        // https://mvnrepository.com/artifact/com.github.ben-manes.caffeine/caffeine
+        'Caffeine'                         : "com.github.ben-manes.caffeine:caffeine:${versions.Caffeine}"
+
 ]

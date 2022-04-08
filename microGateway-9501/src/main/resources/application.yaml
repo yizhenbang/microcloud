@@ -4,6 +4,9 @@ spring:
   application:
     name: microcloud.gateway
   cloud:
+    loadbalancer:
+      ribbon:
+        enabled: false # 取消使用默认的 LoadBalancerClientFilter
     gateway: # 网关
       discovery: # 发现
         locator: # 位置
