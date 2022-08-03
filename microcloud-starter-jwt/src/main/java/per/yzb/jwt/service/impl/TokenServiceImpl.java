@@ -22,8 +22,8 @@ public class TokenServiceImpl implements TokenService {
 
     @Autowired
     private JWTConfigProperties jwtConfigProperties;
-    @Autowired
-    private ObjectMapper objectMapper;//在容器中默认会给出一个ObjectMapper，但是在测试环境中是不存在的
+    //@Autowired
+    private ObjectMapper objectMapper = new ObjectMapper();//在容器中默认会给出一个ObjectMapper，但是在测试环境中是不存在的
     @Value("${spring.application.name}")
     private String applicationName;//因为本starter模块会被其他项目引用，为了安全设置一个applicationName
     private SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;//签名加密算法

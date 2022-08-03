@@ -1,0 +1,44 @@
+server:
+  port: 9501
+spring:
+  application:
+    name: microGateway
+  cloud:
+#    loadbalancer:
+#      ribbon:
+#        enabled: false # 取消使用默认的 LoadBalancerClientFilter
+    gateway: # 网关
+      discovery: # 发现
+        locator: # 位置
+          enabled: false
+#      routes:
+#        - id: netty-yzhenb
+#          uri: https://www.yootk.com/resources
+#          predicates:
+#            - Path=/yzhenb
+#        - id: provider-dept
+#          uri: lb://provider-dept # 匹配的路径
+#          predicates:
+#            - Path=/** #匹配全部的子路径
+#          filters:
+#            - AddRequestHeader=yzhenb1228,你好-gateway
+#            - Log=hello,yzhenb
+
+    nacos:
+      discovery:
+        cluster-name: MICROCLOUD_CLUSTER
+        namespace: 92bdc18f-074b-47ab-9f40-983fcb4e1ae1
+        group: MICROCLOUD_GROUP
+        server-addr: nacos-server:8848
+        service: ${spring.application.name}
+        username: nacos
+        password: nacos
+        data-id: application-microGateway-dev.yml
+        timeOut: 500
+management:
+  server:
+    port: 9090
+  endpoints:
+    web:
+      exposure:
+        include: "*"

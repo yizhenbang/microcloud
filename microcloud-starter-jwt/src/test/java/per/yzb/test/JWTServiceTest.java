@@ -31,10 +31,11 @@ public class JWTServiceTest {
 
     @Test
     public void createToken() throws JsonProcessingException {
-        String id = UUID.randomUUID().toString();
-        Map<String, Object> subject = new HashMap<>();
-        subject.put("附加信息","我是附加信息");
-        System.out.println(tokenService.createToken(id, subject));
+        //String id = UUID.randomUUID().toString();
+        //Map<String, Object> subject = new HashMap<>();
+        //subject.put("附加信息","我是附加信息");
+        //System.out.println(tokenService.createToken(id, subject));
+        System.out.println(tokenService);
     }
 
     @Test

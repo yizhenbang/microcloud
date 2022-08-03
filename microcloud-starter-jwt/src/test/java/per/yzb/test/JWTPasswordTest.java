@@ -31,6 +31,6 @@ public class JWTPasswordTest {
     @Test
     public void refreshToken() throws JsonProcessingException {
         // System.out.println(jwtEncryptConfigProperties);
-        System.out.println(passwordEncryptService.encryptPassword("hello"));
+        System.out.println(passwordEncryptService);
     }
 }
